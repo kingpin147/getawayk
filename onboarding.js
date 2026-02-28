@@ -57,15 +57,12 @@ $w.onReady(function () {
         .then((files) => {
           const file = files[0].fileUrl;
           profileImage = file;
-          $w("#image, #image95").src = profileImage;
           $w("#profilePic").src = profileImage;
-          $w("#image, #image95").show();
           $w("#nextBtn3").enable();
         })
         .catch((error) => {
           profileImage = "";
           $w("#nextBtn3").disable();
-          $w("#image, #image95").hide();
           console.error("Upload error: ", error);
         });
     }
